@@ -10,12 +10,12 @@ class CustomerController extends Controller
 
     public function index()
     {
-        //
+        return view('kasir.product');
     }
 
     public function create()
     {
-        return view('kasir.modal-nama');
+        return view('kasir.product');
     }
 
     public function store(Request $request)

@@ -1,4 +1,4 @@
-@extends('kasir.layout')
+@extends('kasir.main')
 
 @section('product')
     <div class="list">

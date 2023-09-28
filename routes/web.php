@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CustomerController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,17 +12,16 @@ use App\Http\Controllers\CustomerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+$controller_path = 'App\Http\Controllers';
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/kasir', function () {
-    return view('kasir.product');
-});
 
 Route::resource('product',ProductController::class);
 
-Route::get('/customer/', 'CustomerController@create')->name('customer.create');
-Route::post('/customer/store', 'CustomerController@store')->name('customer.store');
+Route::get('/kasir', $controller_path . '\CustomerController@index');
+Route::get('/kasir/create', $controller_path . '\CustomerController@create')->name('customer.create');
+Route::post('/kasir/customer-store', $controller_path . '\CustomerController@store')->name('customer.store');
 
