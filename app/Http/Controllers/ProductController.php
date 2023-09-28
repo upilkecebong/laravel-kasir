@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Order;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $products = Product::latest()->paginate(10);
+        $products = Product::oldest()->paginate(10);
         return view('product.index',compact('products'));
     }
 
