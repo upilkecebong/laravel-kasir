@@ -48,6 +48,13 @@ button{
     transition: 0.3s;
 }
 
+button:hover{
+    color: #FFFCED;
+    background-color: #3DA200;
+    font-weight: lighter;
+}
+
+
 .foto img{
     width:14rem;
     height: 8rem;
