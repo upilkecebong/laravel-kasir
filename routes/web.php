@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('/kasir', function () {
 });
 
 Route::resource('product',ProductController::class);
+
+Route::get('/customer/', 'CustomerController@create')->name('customer.create');
+Route::post('/customer/store', 'CustomerController@store')->name('customer.store');
+

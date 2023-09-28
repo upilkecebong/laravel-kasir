@@ -22,17 +22,9 @@
         <div class="chart">
             <h4>Keranjang</h4>
             @yield('chart')
-            <div class="chart-footer">
-                <div class="total">
-                    <h5>TOTAL</h5>
-                    <h3>Rp<span id="total">0</span></h3>
-                </div>
-                <button class="bayar" onclick="bayar()">BAYAR</button>
-            </div>
         </div>
     </div>
 
 
-    <script src="app.js"></script>
 </body>
 </html>

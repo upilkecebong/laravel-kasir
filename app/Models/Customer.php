@@ -15,5 +15,18 @@ class Customer extends Model
     {
         return $this->hasMany(Order::class);
     }
-    
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($customer) {
+            // Cek apakah tanggal tidak dikirimkan dari formulir
+            if (empty($customer->tanggal)) {
+                // Jika tidak, atur tanggal ke tanggal sekarang
+                $customer->tanggal = now();
+            }
+        });
+    }
+
 }
